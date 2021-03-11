@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome. GitHub WebHook -- Testing...</h1>
+<h1 align="center">Welcome. GitHub WebHook -- Testing.. JaCoCo with SMTP </h1>
 <h1 align="center"> Mohan Krishna</h1>
 <hr>
 <div style="text-align: center;">
@@ -17,8 +17,7 @@
 		<img src="images/mithunlogo.jpg" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
-		Mithun Software Solutions, 
-		Martha Halli,
+		Mk Technologies ,
 		Bangalore,
 		+91-9980923226,
 		devopstrainingbr@gmail.com
