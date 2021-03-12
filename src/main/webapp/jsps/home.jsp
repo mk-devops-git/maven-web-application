@@ -10,14 +10,14 @@
 </head>
 <body>
 <h1 align="center">Welcome </h1>
-<h1 align="center">This is mohan krishna</h1>
+<h1 align="center">Mohan krishna</h1>
 <hr>
 <div style="text-align: center;">
 	<span>
 		<img src="images/mithunlogo.jpg" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
-	     kkkkkkkkkkkkkkkkkk
+	   Mk is good
 		<br>
 		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
 	</span>
