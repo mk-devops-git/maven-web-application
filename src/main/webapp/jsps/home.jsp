@@ -13,9 +13,10 @@
 <h1 align="center">Mohan krishna</h1>
 <hr>
 <div style="text-align: center;">
-	<span>
+/*	<span>
 		<img src="images/mithunlogo.jpg" alt="" width="100">
 	</span>
+	*/
 	<span style="font-weight: bold;">
 	   Mk is good
 		<br>
