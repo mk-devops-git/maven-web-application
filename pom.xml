@@ -100,13 +100,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://15.206.90.155:8081/repository/wallmart-realease/</url>
+	      <url>http://52.66.141.11:8081/repository/pipelne_scriptedway_release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://15.206.90.155:8081/repository/wallmart-snapshot/</url>
+	      <url>http://52.66.141.11:8081/repository/pipeline_scriptedway_snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
