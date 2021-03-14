@@ -18,10 +18,8 @@
 	</span>
 	
 	<span style="font-weight: bold;">
-	   \n
-		Mk is good \n
-		he is best \n
-		be brave
+	╭∩╮（︶_︶）╭∩╮
+		
 		<br>
 		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
 	</span>
