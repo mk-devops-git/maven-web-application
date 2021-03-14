@@ -11,36 +11,29 @@ node ('master')
       echo "Jenkins URL ${env.JENKINS_URL}"
       echo "JOB Name ${env.JOB_NAME}"
   
-   //properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2')), pipelineTriggers([pollSCM('* * * * *')])])
-  
-  stage("CheckOutCodeGit")
-  {
-   git branch: 'master', credentialsId: '65fb834f-a83b-4fe7-8e11-686245c47a65', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
- }
- 
- stage("Build")
- {
- sh "${mavenHome}/bin/mvn clean package"
- }
- 
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')), pipelineTriggers([githubPush()])])
+    stage('Getting code from github')
+    {
+        git credentialsId: '961ce41b-f470-47ff-a5eb-0fcc38a08758', url: 'https://github.com/mk-devops-git/maven-web-application.git'
+    }
+    stage('maven Build'){
+        sh "${maven363}/bin/mvn clean package"
+    }
+    stage('sonar report')
+    {
+        sh "${maven363}/bin/mvn sonar:sonar"
+    }
+    stage('UploadIntoArtifacoryRepository-Nexus'){
+        sh "${maven363}/bin/mvn deploy"
+    }
+    stage('Deployment-TomCat')
+    {
+        sshagent(['959d8bce-28d1-4783-9f1f-6074599eb7e1'])
+            {
+            sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52.66.141.11:/opt/apache-tomcat-9.0.43/webapps"
+            }
+    }
   /*
- stage("ExecuteSonarQubeReport")
- {
- sh "${mavenHome}/bin/mvn sonar:sonar"
- }
- 
- stage("UploadArtifactsintoNexus")
- {
- sh "${mavenHome}/bin/mvn deploy"
- }
- 
-  stage("DeployAppTomcat")
- {
-  sshagent(['423b5b58-c0a3-42aa-af6e-f0affe1bad0c']) {
-    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@15.206.91.239:/opt/apache-tomcat-9.0.34/webapps/" 
-  }
- }
- 
  stage('EmailNotification')
  {
  mail bcc: 'devopstrainingblr@gmail.com', body: '''Build is over
