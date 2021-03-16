@@ -1,0 +1,13 @@
+node ('master')
+ {
+  
+  def maven363 = tool name: "maven3.6.3"
+  
+  stage('Getting code from github')
+    {
+        git credentialsId: '961ce41b-f470-47ff-a5eb-0fcc38a08758', url: 'https://github.com/mk-devops-git/maven-web-application.git'
+    }
+    stage('maven Build'){
+        sh "${maven363}/bin/mvn clean package"
+    }
+}
