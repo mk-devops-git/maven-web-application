@@ -1,4 +1,4 @@
-node ('master')
+node ('mk')
  {
   
   def maven363 = tool name: "maven3.6.3"
